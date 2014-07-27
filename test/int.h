@@ -2,16 +2,11 @@
 #ifndef HEADER_GUARD_C99_STDINT_H
 #define HEADER_GUARD_C99_STDINT_H
 
+#include <stdint.h>
+#include <limits.h>
 #include "static_assert.h"
 
-
-
-#if defined __GNUC__
-
-#include <stdint.h>
-
-
-#elif defined _MSC_VER
+#if defined _MSC_VER
 
 typedef signed char			int8_t;
 typedef unsigned char		uint8_t;
@@ -32,7 +27,7 @@ typedef signed __int64		int_least64_t;
 typedef unsigned __int64	uint_least64_t;
 
 
-#elif defined UNIX
+#elif !defined __GNUC__
 
 typedef signed char			int8_t;
 typedef unsigned char		uint8_t;

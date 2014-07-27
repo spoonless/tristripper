@@ -17,7 +17,7 @@
 #include <GL/glut.h>
 
 #include "base_exception.h"
-#include "stdint.h"
+#include "int.h"
 
 
 

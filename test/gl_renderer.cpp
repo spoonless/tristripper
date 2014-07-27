@@ -28,6 +28,9 @@ gl_renderer::gl_renderer()
 	using namespace std;
 
 	atexit(AtExit);
+	
+	int nb_arguments = 0;
+	glutInit(&nb_arguments,0);
 
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
 	glutInitWindowSize(320, 240);
