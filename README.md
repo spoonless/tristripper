@@ -8,8 +8,9 @@ Original sources can be downloaded at http://users.telenet.be/tfautre/softdev/tr
 The sources of this project include patches from OpenSceneGraph. 
 I have also patched the test program which successfully compile and run on Linux.
 
-License (from file include/tri_stripper.h)
+License 
 =======
+from file include/tri_stripper.h
 
 Copyright (C) 2004 Tanguy Fautré.
 
