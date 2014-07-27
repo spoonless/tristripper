@@ -23,14 +23,13 @@ high_res_timer gl_renderer::m_Timer;
 // Construction/Destruction
 //////////////////////////////////////////////////////////////////////
 
-gl_renderer::gl_renderer()
+gl_renderer::gl_renderer(int * argc, char * argv[])
 {
 	using namespace std;
 
 	atexit(AtExit);
 	
-	int nb_arguments = 0;
-	glutInit(&nb_arguments,0);
+	glutInit(argc,argv);
 
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
 	glutInitWindowSize(320, 240);

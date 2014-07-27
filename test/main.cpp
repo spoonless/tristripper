@@ -10,7 +10,7 @@ int main(int argc, char * argv[])
 {
 	// Launch OpenGL Renderer and run the predefined scene
 	try {
-		gl_renderer();
+		gl_renderer(&argc, argv);
 	}
 
 	// Global error handling
