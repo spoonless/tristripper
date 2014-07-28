@@ -54,9 +54,17 @@ install(FILES
 # test program settings
 ###############################################
 if(TRISTRIPPER_BUILD_TEST)
+
+  find_package(OpenGL REQUIRED)
+  find_package(GLUT REQUIRED)
+
   file(COPY "${CMAKE_CURRENT_SOURCE_DIR}/test/models" DESTINATION "${CMAKE_CURRENT_BINARY_DIR}")
 
-  include_directories("test")
+  include_directories(
+    "test"
+    ${OPENGL_INCLUDE_DIR}
+    ${GLUT_INCLUDE_DIR})
+
   add_executable(test
     test/gl_mesh.cpp
     test/gl_model.cpp
@@ -66,12 +74,10 @@ if(TRISTRIPPER_BUILD_TEST)
     test/varrays_normalizer.cpp
   )
 
-  if(UNIX)
-    target_link_libraries(test tristripper GL GLU glut)
-
-  elseif(WIN32)
-    target_link_libraries(test tristripper opengl32 glu32 glut32)
-
-  endif()
+  target_link_libraries(test
+    tristripper
+    ${OPENGL_LIBRARIES}
+    ${GLUT_LIBRARIES}
+  )
 
 endif()
